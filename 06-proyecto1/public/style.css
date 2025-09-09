@@ -1,0 +1,263 @@
+body{
+
+    background-color: #483e1ec5;
+    font-family: sans-serif, Arial, Helvetica;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+.layout{
+    width: 100%;
+    height: auto;
+
+    display: grid;
+    grid-template-areas: 
+     "header header nav nav"
+     "content content content lateral"
+     "content content content lateral"
+     "footer footer footer footer"
+    ;
+
+    /*
+    ESTO FUNCIONA PARA PODER CONTROLAR EL HEIGHT DE LAS 4 COLUMNAS:    */
+    
+    grid-template-rows: auto auto 90% auto;
+    grid-template-columns: auto 100px 0px 400px;
+
+
+    
+
+}
+
+
+/* ESTA ES LA CABECERA*/
+
+.header{
+    grid-area: header;
+    text-align: left;
+    padding-left: 80px;
+    color: rgba(255, 255, 255, 0.767);
+    background-color: rgba(5, 5, 5, 0.814);
+    height: flex 90px;
+
+}
+
+.nav{
+    grid-area: nav;
+    color: black;
+    height: flex 90px;
+    background-color: rgba(5, 5, 5, 0.814);
+    padding-right: 100px;
+}
+
+/* AQUI VAN A IR TODAS LAS PELICULAS DISPONIBLES */
+
+.content{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+
+
+.peli-item{
+
+    flex-grow: 1;
+    border-radius: 10px;
+    background-color: rgba(5, 5, 5, 0.814);
+    color: rgba(255, 255, 255, 0.767);
+    margin: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 35px;
+    padding-right: 35px;
+    height: flex;
+    width:  210px;
+    border-radius: 5px;
+
+}
+
+.peli-item > button{
+
+    margin-right: 5px;
+
+}
+
+
+/* ESTA ES LA BARRA DE BUSQUEDA EN LA CUAL SE VA A BUSCAR LAS PELICULAS O AGREGARLAS*/
+
+
+.lateral{
+    grid-area: lateral;
+    color: black;
+    background-color: #5b5544c5;
+    border-left: 1px solid  #9a823956;
+    padding: 20px;
+    padding-top: 10px;
+
+}
+
+.lateral > div{
+
+    box-sizing: border-box;
+    width: 90%;
+    margin: 20px;
+    padding: 20px;
+    padding-top: 10px;
+    border-radius: 10px;
+    background-color: rgba(132, 143, 83, 0.445);
+
+}
+
+
+
+.editar{
+
+ display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 12px ;
+    border-radius: 5px;
+    color: black;
+    font-size: 16px;
+    width: 90%;
+    opacity: 4;
+    outline: 0;
+    border-color: transparent;
+    background-color: rgb(255, 255, 255);
+    
+}
+
+
+.lateral input[type="text"],
+.lateral input[type="text"],
+.lateral textarea{
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 12px ;
+    border-radius: 5px;
+    color: black;
+    font-size: 16px;
+    width: 80%;
+    opacity: 4;
+    outline: 0;
+    border-color: transparent;
+}
+
+
+
+/* ESTO ES PARA LA IMAGEN QUE VA AL LADO DEL TITULO*/
+
+.app-icon{
+
+    height: 28px;
+    width: 28px;
+}
+
+.nav > ul{
+
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    list-style: none;
+
+
+}
+
+.nav li{
+
+    margin-top: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+
+.nav a{
+
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+
+
+}
+
+.nav a:hover{
+    transform: scale(1.1, 1.1);
+
+}
+
+button, 
+input[type="submit"],
+input[type="button"]{
+
+    background-color: rgba(161, 161, 116, 0.691);
+    color: black;
+    border-radius: 3px;
+    width: 101px;
+    margin-top: 20px;
+    outline: 0;
+    padding: 15px;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 300ms;
+ 
+
+}
+
+.edit:hover{
+    background-color: #9a5508;
+    transition: all 400ms;
+
+}
+
+.delete:hover{
+    background-color: #9b0202;
+    transition: all 400ms;
+}
+
+/* ESTE ES EL FOOTER */
+
+.footer{
+    grid-area: footer;
+    border-top: 1px solid #413c2cc5;
+    background-color: rgba(0, 0, 0, 0.756);
+    text-align: left;
+    color: #f5f4f4dd;
+    font-size: 18px;
+    line-height: 60px;
+    padding-left: 30px;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer a{
+
+    text-decoration: none;
+    font-size: 18px;
+    color: #babaeefe;
+    
+}
+
+@media (max-width: 1187px){
+
+     .peli-item{
+        width: 80%;
+     }
+     .content{
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+     }
+
+}
+
