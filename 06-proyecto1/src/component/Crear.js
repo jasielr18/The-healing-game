@@ -22,7 +22,7 @@ export const Crear = ({setListadoState}) => {
             descripcion
         };
 
-        if (e.target.title.value !== null && e.target.descripcion.value !== null){
+        if (titulo.length >=1 && descripcion.length >=1 ){
                
           // Guardar estado
              setPeliState(peli);
@@ -37,16 +37,24 @@ export const Crear = ({setListadoState}) => {
 
               e.target.title.value = null;
               e.target.descripcion.value = null;
-              setIdentificarNull(false)
-              setMovieAdded(true)
+          
+   
         }else{
 
           // Validar que si ambos campos estan vacios entonces que no agrege la pelicula.
           e.target.title.value = null
           e.target.descripcion.value = null;
-          setIdentificarNull(true)
-          setMovieAdded(false)
-        }       
+          
+          
+
+        }
+        
+        // if(titulo == null && descripcion == null){
+
+
+          
+                
+        // }       
     }
 
 
@@ -55,10 +63,10 @@ export const Crear = ({setListadoState}) => {
     
     <h3 className="tittle">{tituloComponente}</h3>
     
-    
-     {(identificarNull === true ) && <strong className='Llenar-campos'><p> Los campos deben ser llenos</p></strong>}
+  
+     {/* {(identificarNull === true ) && <strong className='Llenar-campos'><p> Los campos deben ser llenos</p></strong>} */}
 
-   {(peliState.titulo && movieAdded == true) ? <strong ><p> Has añadido la pelicula: {peliState.titulo}</p></strong> : null} 
+   {(peliState.titulo) ? <strong ><p> Has añadido la pelicula: {peliState.titulo}</p></strong> : null} 
     
 
     <form onSubmit={conseguirDatosForm}>
