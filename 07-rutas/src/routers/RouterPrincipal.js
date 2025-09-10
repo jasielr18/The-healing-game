@@ -1,9 +1,18 @@
 import React from 'react';
-import {Routes, Route, NavLink, Link, BrowserRouter } from 'react-router-dom';
+import {Routes, Route, NavLink, Link, BrowserRouter, Navigate } from 'react-router-dom';
 import { Inicio } from '../components/Inicio';
 import { Contacto } from '../components/Contacto';
 import { Articulos } from '../components/Articulos';
 import { Error } from '../components/Error';
+import { Persona } from '../components/Persona';
+import { PanelControl } from '../components/PanelControl';
+import { InicioPanel } from '../components/panel/InicioPanel';
+import { Gestion } from '../components/panel/Gestion';
+import { Crear } from '../components/panel/Crear';
+import { AcercaDe } from '../components/panel/AcercaDe';
+
+
+
 
 export const RouterPrincipal = () => {
 
@@ -31,6 +40,14 @@ export const RouterPrincipal = () => {
                          className={({isActive}) => isActive ? "activado" : ""}
             >Articulos</NavLink>
             </li> 
+            <li><NavLink to="/Persona"
+                         className={({isActive}) => isActive ? "activado" : ""}
+            >Persona </NavLink>
+            </li> 
+            <li><NavLink to="/Panel"
+                         className={({isActive}) => isActive ? "activado" : ""}
+            >Panel de control </NavLink>
+            </li> 
         </ul>
      </nav>
      <hr/>
@@ -39,9 +56,20 @@ export const RouterPrincipal = () => {
 
     
       <Routes>
-        <Route path='/Inicio' element={<Inicio/>} />
+        <Route path='/Inicio/' element={<Inicio/>} />
         <Route path='/Contacto' element={<Contacto/>} />
         <Route path='/Articulos' element={<Articulos/>} />
+        <Route path='/Persona' element={<Persona/>} />
+        <Route path='/Persona/:nombre' element={<Persona/>} />
+        <Route path='/Persona/:nombre/:apellido' element={<Persona/>} />
+        <Route path='/Redirigir' element={<Navigate to="/Persona/"/>} />
+        <Route path="/Panel/*" element={<PanelControl/>}>
+             <Route index element={<InicioPanel/>}/>
+             <Route path='inicio' element={<InicioPanel/>}/>
+             <Route path='crear-articulos' element={<Gestion/>}/>
+             <Route path='gestion-usuarios' element={<Crear/>}/>
+             <Route path='acerca-de' element={<AcercaDe/>}/>
+        </Route>
         <Route path='*' element={<Error/>}/>
       </Routes>   
     
