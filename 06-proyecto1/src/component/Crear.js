@@ -6,7 +6,7 @@ export const Crear = ({setListadoState}) => {
 
     const tituloComponente = "Añadir pelicula";
     const [peliState, setPeliState] = useState({});
-    const [identificarNull, setIdentificarNull] = useState(null);
+    const [identificarNull, setIdentificarNull] = useState();
     const [movieAdded, setMovieAdded] = useState(null);
 
     const conseguirDatosForm = e => {
@@ -22,6 +22,7 @@ export const Crear = ({setListadoState}) => {
             descripcion
         };
 
+        // Confirmar que si ambos campos estan llenos, entonces si podemos agregar un nuevo item
         if (titulo.length >=1 && descripcion.length >=1 ){
                
           // Guardar estado
@@ -37,16 +38,15 @@ export const Crear = ({setListadoState}) => {
 
               e.target.title.value = null;
               e.target.descripcion.value = null;
+
+              setIdentificarNull(false)
           
    
         }else{
 
           // Validar que si ambos campos estan vacios entonces que no agrege la pelicula.
-          e.target.title.value = null
-          e.target.descripcion.value = null;
+          setIdentificarNull(true)
           
-          
-
         }
         
         // if(titulo == null && descripcion == null){
@@ -63,10 +63,13 @@ export const Crear = ({setListadoState}) => {
     
     <h3 className="tittle">{tituloComponente}</h3>
     
-  
-     {/* {(identificarNull === true ) && <strong className='Llenar-campos'><p> Los campos deben ser llenos</p></strong>} */}
+  {(identificarNull == false) ? 
+  <strong ><p> Has añadido la pelicula: {peliState.titulo}</p></strong> 
+  :(identificarNull == true) && <strong className='Llenar-campos'><p> Ambos campos deben ser llenos</p></strong>
+}
+   
 
-   {(peliState.titulo) ? <strong ><p> Has añadido la pelicula: {peliState.titulo}</p></strong> : null} 
+  
     
 
     <form onSubmit={conseguirDatosForm}>
