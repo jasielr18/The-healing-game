@@ -1,0 +1,23 @@
+[33mcommit 6e2e3de8cac081390cfb684bce63d95e5652f5d3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Jasiel <jasieluasd@gmail.com>
+Date:   Wed Sep 10 15:54:07 2025 -0400
+
+    Actualizacion: Ya sale el mensaje cuando los campos estan vacios, y cuando agregamos una pelicula de la forma correcta
+
+[33mcommit bcf7d8c96680cc18310feae60ba28f340de07e91[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Jasiel <jasieluasd@gmail.com>
+Date:   Wed Sep 10 15:34:24 2025 -0400
+
+    Aqui ya logre hacer que el sistema valide si los campos estan vacios antes de crear un nuevo item
+
+[33mcommit f8167ba38acdc1963e249a0be78b00b5a93e13c7[m
+Author: Jasiel <jasieluasd@gmail.com>
+Date:   Wed Sep 10 11:46:03 2025 -0400
+
+    redirigir routing, Hook useNavigate, sub rutas y rutas anidadas
+
+[33mcommit 54da8f882303ec30c64966f628e12438291c74e9[m
+Author: Jasiel <jasieluasd@gmail.com>
+Date:   Tue Sep 9 19:49:20 2025 -0400
+
+    Primera actualizacion
