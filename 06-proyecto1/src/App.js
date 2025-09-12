@@ -2,74 +2,59 @@ import { Listado } from "./component/Listado";
 import { Buscar } from "./component/Buscar";
 import { Crear } from "./component/Crear";
 import { useState } from "react";
+import { BrowserRouter, Routes , Route } from 'react-router-dom';
+import { HeaderNav } from "./layout/HeaderNav";
+import { QuizCreator } from "./sections/QuizCreator";
+import { Quiz } from "./sections/Quiz";
+import { Settings } from "./sections/Settings";
 
-import imagen from './images/movie.png';
 
 function App() {
-
-  const [listadoState, setListadoState ] = useState([]);
-
 
   return (
     
     <div className="layout">
 
-    {/*Aqui va la cabecera de la pagina*/}
+      <BrowserRouter > 
 
-        <header className="header">
+     {/*Aqui va la cabecera de la pagina*/}
 
-            <h1><img className="app-icon" src={imagen} /> Pelis Free</h1>
-
-        </header>
+        <HeaderNav/>
 
        {/*Aqui va todo el contenido, en este caso las peliculas*/}
 
-        <section className="content">
-            
-          {/*Aqui van las peliculas*/}
-           <Listado listadoState={listadoState}
-                    setListadoState={setListadoState} />
+       {/*  Routes to create: Games, Quiz Creator, Settings */}
+          
+          <Routes>
+             <Route index element={<QuizCreator />}>
+             </Route>
+             <Route path="/QuizCreator" element={<QuizCreator/>}/>
+              <Route path="/quiz" element={<Quiz/>}/>
+              <Route path="settings" element={<Settings/>}/>
+          </Routes>
 
-        </section>
+     
 
-        {/*Aqui va la barra de navegacion para moverse en la pagina*/}
-
-        <nav className="nav">
-
-            <ul>
-                <li><a href="/#">Inicio</a></li>
-                <li><a href="/#">Películas</a></li>
-                <li><a href="/#">Blog</a></li>
-                <li><a href="/#">Contacto</a></li>
-            </ul>
-
-        </nav>
-
-        
-
-        
-
-        <aside className="lateral">
-
-       {/* Esta va a ser la barra de busqueda */}
-             <Buscar 
-                   listadoState={listadoState}
-                  setListadoState={setListadoState}
-             />
-
-       {/* Esto es para poder añadir nuevas peliculas en nuestra aplicacion*/}
-             <Crear setListadoState={setListadoState}/>
              
-    
-        </aside>
 
         {/* Esto es el pie de la pagina*/}
 
  <footer className="footer">
             &copy; Jasiel Ramirez Suriel / <a href="https://jasielr18.github.io/portfolio2.0/index.html">Clickea para ir a mi portafolio</a> /
         </footer>
+    
+    </BrowserRouter>
 
     </div>
+
+    
+
+
+ 
+
+    
+
+  
   );
 }
 
