@@ -4,7 +4,7 @@ import { GuardarEnStorage } from '../helpers/GuardarEnStorage';
 export const Crear = ({setListadoState}) => {
 
 
-    const tituloComponente = "Añadir pelicula";
+    const tituloComponente = "Añadir trivia";
     const [peliState, setPeliState] = useState({});
     const [identificarNull, setIdentificarNull] = useState();
     const [movieAdded, setMovieAdded] = useState(null);
@@ -64,7 +64,7 @@ export const Crear = ({setListadoState}) => {
     <h3 className="tittle">{tituloComponente}</h3>
     
   {(identificarNull == false) ? 
-  <strong ><p> Has añadido la pelicula: {peliState.titulo}</p></strong> 
+  <strong ><p> Has añadido la trivia: {peliState.titulo}</p></strong> 
   :(identificarNull == true) && <strong className='Llenar-campos'><p> Ambos campos deben ser llenos</p></strong>
 }
    

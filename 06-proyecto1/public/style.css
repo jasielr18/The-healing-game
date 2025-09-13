@@ -1,6 +1,7 @@
 body{
 
-    background-color: #483e1ec5;
+  /* similar a: linear-gradient(135deg, #4cb5bd, #3a6edc) pero más sobrio */
+background: linear-gradient(135deg, #2f8b86, #274e8b);
     font-family: sans-serif, Arial, Helvetica;
     text-align: center;
     padding: 0px;
@@ -38,7 +39,7 @@ body{
     grid-area: header;
     text-align: left;
     padding-left: 80px;
-    color: rgba(255, 255, 255, 0.767);
+    color: white;
     background-color: rgba(5, 5, 5, 0.814);
     height: flex 90px;
 
@@ -70,7 +71,7 @@ body{
     flex-grow: 1;
     border-radius: 10px;
     background-color: rgba(5, 5, 5, 0.814);
-    color: rgba(255, 255, 255, 0.767);
+    color: white;
     margin: 20px;
     padding-top: 60px;
     padding-bottom: 60px;
@@ -94,8 +95,9 @@ body{
 
 .lateral{
     grid-area: lateral;
-    color: black;
-    background-color: #5b5544c5;
+    color: white;
+    background-color: rgba(5, 5, 5, 0.814);
+    
     border-left: 1px solid  #9a823956;
     padding: 20px;
     padding-top: 10px;
@@ -110,7 +112,7 @@ body{
     padding: 20px;
     padding-top: 10px;
     border-radius: 10px;
-    background-color: rgba(132, 143, 83, 0.445);
+    background-color: #f5e6da4f;
 
 }
 
@@ -191,6 +193,7 @@ body{
 
 .nav a:hover{
     transform: scale(1.1, 1.1);
+    color: #9c1d23;
 
 }
 
@@ -198,8 +201,8 @@ button,
 input[type="submit"],
 input[type="button"]{
 
-    background-color: rgba(161, 161, 116, 0.691);
-    color: black;
+    background-color: #ef6161;
+    color: white;
     border-radius: 3px;
     width: 101px;
     margin-top: 20px;
@@ -207,7 +210,7 @@ input[type="button"]{
     padding: 15px;
     text-transform: capitalize;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: bold;
     cursor: pointer;
     transition: all 300ms;
  
@@ -215,13 +218,14 @@ input[type="button"]{
 }
 
 .edit:hover{
-    background-color: #9a5508;
+    background-color: #ffd15c99;
+   
     transition: all 400ms;
 
 }
 
 .delete:hover{
-    background-color: #9b0202;
+    background-color: #6f2525;
     transition: all 400ms;
 }
 
@@ -250,7 +254,7 @@ input[type="button"]{
 
 @media (max-width: 1187px){
 
-     .peli-item{
+     .peli-item, .content-quiz{
         width: 80%;
      }
      .content{
@@ -258,6 +262,150 @@ input[type="button"]{
         justify-content: center;
         align-items: center;
      }
+
+}
+
+/* ESTE ES LA SECCION DEL JUEGO QUIZ */
+
+.layout-quiz{
+
+    width: 100%;
+    height: auto;
+
+    display: grid;
+    grid-template-areas: 
+     "header header nav nav"
+     "content1 content1 content1 lateral"
+     "content1 content1 content1 lateral"
+     "footer footer footer footer"
+    ;
+
+    /*
+    ESTO FUNCIONA PARA PODER CONTROLAR EL HEIGHT DE LAS 4 COLUMNAS:    */
+    
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
+
+
+}
+
+/* .content-quiz{
+  grid-area: content1;
+    border: black solid 4px;
+    background-color: rgba(0, 0, 0, 0.298);
+    border-radius: 5px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 400px;
+    margin-top: 50px;
+    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-right: 100px;
+    padding-left: 100px;
+} */
+
+.content-quiz{
+  grid-area: content1;
+  text-align: center;
+  height: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  border-color: #5b3a18b0;
+  border-style: solid;
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-left: 90px;
+  padding-top: 40px;
+  color: white;
+  background-color: rgba(5, 5, 5, 0.814);
+
+}
+
+.btn{
+
+  width: 390px;
+  height: 50px;
+  margin-top: 10px;
+  margin-right: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #ef6161;
+  cursor: pointer;
+
+}
+
+.btn:hover{
+ background-color: #6f2525;
+}
+
+.nextBtn {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: bold;
+      width: 197px;
+      padding-right: 0px;
+      font-size: 23px;
+      color: #ffd25c;
+      background-color: transparent;
+      margin-left: 693px;
+      border-style: none;
+      border-color: rgba(255, 255, 255, 0.865);
+      margin-top: 28px;
+  }
+
+.nextBtn:hover {
+     cursor: pointer;
+     color: #e6b84f;
+
+  }
+
+.answerBtn{
+    margin-top: 100px;
+}
+
+.questionQuizGame1{
+   
+    margin-top: 20px;
+   margin-left: 150px;
+   margin-right: 150px;
+   margin-bottom: 30px;
+   font-family: 'Open Sans', sans-serif;
+   font-weight: bold;
+   font-size: 20px;
+   color: #1a1a1a;
+   border-style: solid;
+   border-color: #b07b52;
+   border-radius: 2px;
+   padding-top: 10px;
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-bottom: 10px;
+   background-color: #f5e6da;
+
+}
+
+.gamepic{
+    height: 50px;
+    width: 50px;
+    margin: 15px;
+    transform: rotate(360deg);
+    border-radius: 5px;
+    opacity: 0.90;
+    
+}
+
+.lateral-quiz{
+    grid-area: lateral;
+    color: black;
+    background-color: #c22d2d00;
+    border-left: 2px solid  #100d0756;
+    
+    padding-top: 10px;
 
 }
 

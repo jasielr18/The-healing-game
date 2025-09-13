@@ -6,7 +6,7 @@ export const Editar = ({peli, getPelis, setListadoState, setEditar}) => {
 
     const [identificarNull, setIdentificarNull] = useState(false);
 
-    const titulo_componente = "Editar pelicula"
+    const titulo_componente = "Editar trivia"
 
     const actualizarPeli = (e, id) => {
         e.preventDefault();
