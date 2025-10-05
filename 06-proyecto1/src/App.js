@@ -7,6 +7,8 @@ import { HeaderNav } from "./layout/HeaderNav";
 import { QuizCreator } from "./sections/QuizCreator";
 import { Quiz } from "./sections/Quiz";
 import { Settings } from "./sections/Settings";
+import { QuizMenu } from "./sections/QuizMenu";
+import { Error404 } from "./sections/Error404";
 
 
 function App() {
@@ -29,14 +31,12 @@ function App() {
              <Route index element={<QuizCreator />}>
              </Route>
              <Route path="/QuizCreator" element={<QuizCreator/>}/>
-              <Route path="/quiz" element={<Quiz/>}/>
+              <Route path="/QuizMenu" element={<QuizMenu/>}/>
               <Route path="settings" element={<Settings/>}/>
+              <Route path="/*" element={<Error404/>}/>
           </Routes>
 
-     
-
-             
-
+  
         {/* Esto es el pie de la pagina*/}
 
  <footer className="footer">

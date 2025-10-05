@@ -9,7 +9,7 @@ export const Navegation = () => {
 
             <ul>
                 <li>
-                    <NavLink to="/Quiz">Quiz</NavLink>
+                    <NavLink to="/QuizMenu">Quiz</NavLink>
                 </li>
 
                 <li>

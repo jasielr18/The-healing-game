@@ -1,48 +1,19 @@
 import React from 'react'
-import { Listado } from '../component/Listado';
-import { Buscar } from '../component/Buscar';
-import { Crear } from '../component/Crear';
 import { Navegation } from '../layout/Navegation';
-import { useState } from 'react';
 import logo from '../images/medicine.png'
 
-export const Quiz = () => {
+export const Error404 = () => {
 
-  const nextText = "Next >>"
-  
   return (
+    
      <>
  
 
 
       <div className='layout-quiz'>
-        <section className="content-quiz">
+        <section className="content">
                 
-                <div id="quizGame">
-
-          <h2 id="question" className="questionQuizGame1"> ¿Cuál es la rama de la biología que estudia el funcionamiento interno de las células, incluyendo procesos como el transporte de sustancias, la comunicación celular y la producción de energía?</h2>
-
-          
-
-      <div className="answerBtn">
-
-                <button className="btn" >Anatomía humana</button>
-                <button className="btn" >Genética molecular</button>
-    
-        
-                <button className="btn" >Fisiología celular</button>
-                <button className="btn" >Microbiología</button>
-        
-                
-
-      </div>
-          
-      <button id="next-btn" className="nextBtn">{nextText}</button>
-
-
-
- </div>
-
+              <h1>Error 404: content not found</h1>
 
             </section>
       </div>
@@ -103,7 +74,5 @@ export const Quiz = () => {
         <img className="gamepic" src={logo} alt='Logo'/>
            </aside>
         </>
-
-    
   )
 }
