@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Editar } from './Editar';
-
+import { BrowserRouter, NavLink, Link } from 'react-router-dom'
 
 
 export const Listado = ({listadoState, setListadoState}) => {
+
 
    const [editar, setEditar] = useState(0);
 
@@ -14,8 +15,7 @@ export const Listado = ({listadoState, setListadoState}) => {
 
     }, [])
    
-
-   
+     
 
     const conseguirPeliculas = () =>{
         
@@ -50,7 +50,8 @@ export const Listado = ({listadoState, setListadoState}) => {
   
   return (
     
-    <>
+      <>
+
        
        { listadoState != null ? listadoState.map(peli => {
           return(
@@ -61,6 +62,14 @@ export const Listado = ({listadoState, setListadoState}) => {
 
                 <button className="edit" onClick={() => setEditar(peli.id)}>Editar</button>
                 <button className="delete" onClick={() => borrarPeli(peli.id)}>Borrar</button>
+                
+                <div>
+
+                  <NavLink to="/CreateQuiz" > 
+                    <button className="createQuiz-button">Crear Quiz</button>
+                 </NavLink>
+
+                </div>
 
                 {/* Aqui vamos a mostrar el formulario para editar */}
                 {editar === peli.id && 
@@ -76,7 +85,7 @@ export const Listado = ({listadoState, setListadoState}) => {
 
         }) : <h2>No hay peliculas!</h2>}
 
-    </>
+       </>
 
       )}
 

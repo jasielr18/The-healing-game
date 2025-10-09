@@ -9,6 +9,7 @@ import { Quiz } from "./sections/Quiz";
 import { Settings } from "./sections/Settings";
 import { QuizMenu } from "./sections/QuizMenu";
 import { Error404 } from "./sections/Error404";
+import { CreateQuiz } from "./sections/CreateQuiz";
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
               <Route path="/QuizMenu" element={<QuizMenu/>}/>
               <Route path="settings" element={<Settings/>}/>
               <Route path="/*" element={<Error404/>}/>
+              <Route path="/CreateQuiz" element={<CreateQuiz/>}/>
           </Routes>
 
   
