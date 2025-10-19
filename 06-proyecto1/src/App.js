@@ -10,9 +10,11 @@ import { Settings } from "./sections/Settings";
 import { QuizMenu } from "./sections/QuizMenu";
 import { Error404 } from "./sections/Error404";
 import { CreateQuiz } from "./sections/CreateQuiz";
-
+import { FooterApp } from "./layout/FooterApp";
 
 function App() {
+
+  
 
   return (
     
@@ -33,7 +35,8 @@ function App() {
              </Route>
              <Route path="/QuizCreator" element={<QuizCreator/>}/>
               <Route path="/QuizMenu" element={<QuizMenu/>}/>
-              <Route path="settings" element={<Settings/>}/>
+              <Route path="/Quiz" element={<Quiz/>}/>
+              <Route path="/settings" element={<Settings/>}/>
               <Route path="/*" element={<Error404/>}/>
               <Route path="/CreateQuiz" element={<CreateQuiz/>}/>
           </Routes>
@@ -41,22 +44,11 @@ function App() {
   
         {/* Esto es el pie de la pagina*/}
 
- <footer className="footer">
-            &copy; Jasiel Ramirez Suriel / <a href="https://jasielr18.github.io/portfolio2.0/index.html">Clickea para ir a mi portafolio</a> /
-        </footer>
+          <FooterApp/>
     
     </BrowserRouter>
 
     </div>
-
-    
-
-
- 
-
-    
-
-  
   );
 }
 

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import logo from '../images/medicine.png'
 import { Listado } from '../component/Listado';
 import { Editar } from '../component/Editar';
+import { NavLink } from 'react-router-dom'
 
 
 export const QuizMenu = () => {
@@ -113,9 +114,13 @@ export const QuizMenu = () => {
                          <p className="Descripcion">{peli.descripcion}</p>
 
                         
-                         <button className="play-button" /* onClick="#" */>Jugar</button>
+                         <NavLink 
+                         to="/Quiz" 
+                         state={{ seccionTitulo: peli.titulo }}
+                         >
+                              <button className="play-button">Jugar</button>
+                         </NavLink>
          
-{}
                      </article>
                      );
          

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Editar } from './Editar';
-import { BrowserRouter, NavLink, Link } from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 
 export const Listado = ({listadoState, setListadoState}) => {
-
 
    const [editar, setEditar] = useState(0);
 
@@ -15,8 +14,6 @@ export const Listado = ({listadoState, setListadoState}) => {
 
     }, [])
    
-     
-
     const conseguirPeliculas = () =>{
         
         const pelis = JSON.parse(localStorage.getItem("pelis"));
@@ -65,9 +62,9 @@ export const Listado = ({listadoState, setListadoState}) => {
                 
                 <div>
 
-                  <NavLink to="/CreateQuiz" > 
-                    <button className="createQuiz-button">Crear Quiz</button>
-                 </NavLink>
+                    <NavLink to="/CreateQuiz" state={{ seccionId: peli.id, seccionTitulo: peli.titulo }}>
+                      <button className="createQuiz-button">Crear Quiz</button>
+                    </NavLink>
 
                 </div>
 

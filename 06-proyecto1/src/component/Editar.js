@@ -49,13 +49,7 @@ export const Editar = ({peli, getPelis, setListadoState, setEditar}) => {
             setIdentificarNull(true);
             setListadoState(listadoPeliOriginal);   
             
-        }
-       
-
-
-       
-
-        
+        }       
 }
   
     return (

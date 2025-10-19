@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 
- 
-
 export const Buscar = ({listadoState, setListadoState}) => {
 
   const [busqueda, setBusqueda] = useState('')
@@ -13,7 +11,6 @@ export const Buscar = ({listadoState, setListadoState}) => {
       
       setBusqueda(e.target.value);
       
-      
     // Filter to look for any coincidences
       
       let movieList = listadoState.filter(movie => {
@@ -22,7 +19,6 @@ export const Buscar = ({listadoState, setListadoState}) => {
 
       });
       
-    
     // Show the full movie list if the amount of letters that the user is typing is 1 or bellow
 
     if (busqueda.length <= 1 || movieList.length <= 0){
@@ -34,13 +30,11 @@ export const Buscar = ({listadoState, setListadoState}) => {
       setEcontrado(false)
     }
 
-       
     // Update the state with the main list with everything filtered
     // if(busqueda === movieList.titulo)
 
    setListadoState(movieList);
   
-
     }
 
   return (
@@ -54,7 +48,7 @@ export const Buscar = ({listadoState, setListadoState}) => {
                 <form>
 
                    <input type="text"
-                         placeholder="Buscar pelicula"
+                         placeholder="Buscar trivia"
                          autoCorrect='off'
                           value={busqueda}
                           onChange={buscarPeli}

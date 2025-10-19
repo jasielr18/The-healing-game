@@ -6,7 +6,6 @@ import { Navegation } from '../layout/Navegation';
 import { useState } from 'react';
 
 
-
 export const QuizCreator = () => {
   
     const [listadoState, setListadoState ] = useState([]);
@@ -37,6 +36,7 @@ export const QuizCreator = () => {
        {/* Esto es para poder añadir nuevas peliculas en nuestra aplicacion*/}
              <Crear setListadoState={setListadoState}/>
              
+   
     
         </aside>
     </>
