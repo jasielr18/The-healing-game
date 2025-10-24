@@ -1,0 +1,616 @@
+body{
+
+  /* similar a: linear-gradient(135deg, #4cb5bd, #3a6edc) pero más sobrio */
+background: #afb3b6f6;
+    font-family: sans-serif, Arial, Helvetica;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+.layout{
+    width: 100%;
+    height: auto;
+
+    display: grid;
+    grid-template-areas: 
+     "header header nav nav"
+     "content content content lateral"
+     "content content content lateral"
+     "footer footer footer footer"
+    ;
+
+    /*
+    ESTO FUNCIONA PARA PODER CONTROLAR EL HEIGHT DE LAS 4 COLUMNAS:    */
+    
+    grid-template-rows: auto auto 90% auto;
+    grid-template-columns: auto 100px 0px 400px;
+
+
+    
+
+}
+
+
+/* ESTA ES LA CABECERA*/
+
+.header{
+    grid-area: header;
+    text-align: left;
+    padding-left: 80px;
+    color: rgba(255, 255, 255, 0.943);
+    background-color: rgba(5, 5, 5, 0.814);
+    height: flex 90px;
+
+}
+
+.nav{
+    grid-area: nav;
+    color: black;
+    height: flex 90px;
+    background-color: rgba(5, 5, 5, 0.814);
+    padding-right: 100px;
+}
+
+/* AQUI VAN A IR TODAS LAS PELICULAS DISPONIBLES */
+
+.content{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+
+
+.peli-item{
+
+    flex-grow: 1;
+    border-radius: 10px;
+    background-color: rgba(5, 5, 5, 0.814);
+    color: rgba(255, 255, 255, 0.943);
+    margin: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 35px;
+    padding-right: 35px;
+    height: flex;
+    width:  210px;
+    border-radius: 5px;
+
+}
+
+.quiz-menu-peli-item{
+
+      flex-grow: 1;
+    border-radius: 10px;
+    background-color: rgba(5, 5, 5, 0.814);
+    color: rgba(255, 255, 255, 0.943);
+    margin: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 35px;
+    padding-right: 35px;
+    height: flex;
+    width:  210px;
+    border-radius: 5px;
+
+}
+
+.peli-item > button{
+
+    margin-right: 5px;
+
+}
+
+
+/* ESTA ES LA BARRA DE BUSQUEDA EN LA CUAL SE VA A BUSCAR LAS PELICULAS O AGREGARLAS*/
+
+
+.lateral{
+    grid-area: lateral;
+    color: white;
+    background-color: rgba(5, 5, 5, 0.814);
+    
+    border-left: 1px solid  #9a823956;
+    padding: 20px;
+    padding-top: 10px;
+
+}
+
+.lateral > div{
+
+    box-sizing: border-box;
+    width: 90%;
+    margin: 20px;
+    padding: 20px;
+    padding-top: 10px;
+    border-radius: 10px;
+    background-color: #f5e6da4f;
+
+}
+
+
+
+.editar{
+
+ display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 12px ;
+    border-radius: 5px;
+    color: black;
+    font-size: 16px;
+    width: 90%;
+    opacity: 4;
+    outline: 0;
+    border-color: transparent;
+    background-color: rgb(255, 255, 255);
+    
+}
+
+
+.lateral input[type="text"],
+.lateral input[type="text"],
+.lateral textarea{
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 12px ;
+    border-radius: 5px;
+    color: black;
+    font-size: 16px;
+    width: 80%;
+    opacity: 4;
+    outline: 0;
+    border-color: transparent;
+}
+
+
+
+/* ESTO ES PARA LA IMAGEN QUE VA AL LADO DEL TITULO*/
+
+.app-icon{
+
+    height: 28px;
+    width: 28px;
+}
+
+.nav > ul{
+
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    list-style: none;
+
+
+}
+
+.nav li{
+
+    margin-top: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+
+.nav a{
+
+    color: rgba(255, 255, 255, 0.854);
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+
+
+}
+
+.nav a:hover{
+    transform: scale(1.1, 1.1);
+    color: #9c1d23;
+
+}
+
+button, 
+input[type="submit"],
+input[type="button"]{
+
+    background-color: #ef6161;
+    color: rgba(255, 255, 255, 0.95);
+    border-radius: 3px;
+    width: 101px;
+    margin-top: 20px;
+    outline: 0;
+    padding: 15px;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 300ms;
+ 
+
+}
+
+.createQuiz-button{
+
+    background-color: #d55353;
+    color: rgba(255, 255, 255, 0.854);
+    border-radius: 3px;
+    width: 200px;
+    margin-top: 20px;
+    margin-left: -5px;
+    outline: 0;
+    padding: 15px;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 300ms;
+
+    
+}
+
+.createQuiz-button:hover{
+
+    background-color: #911010;
+
+}
+
+.play-button{
+
+    width: 50%;
+    font-size: 18px;
+  
+}
+
+.play-button:hover{
+
+    background-color: #6f2525;
+    transition: all 400ms;
+    
+}
+
+.edit:hover{
+    background-color: #ffd15c99;
+   
+    transition: all 400ms;
+
+}
+
+.delete:hover{
+    background-color: #6f2525;
+    transition: all 400ms;
+}
+
+/* ESTE ES EL FOOTER */
+
+.footer{
+    grid-area: footer;
+    border-top: 1px solid #413c2cc5;
+    background-color: rgba(0, 0, 0, 0.756);
+    text-align: left;
+    color: #f5f4f4dd;
+    font-size: 18px;
+    line-height: 60px;
+    padding-left: 30px;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer a{
+
+    text-decoration: none;
+    font-size: 18px;
+    color: #babaeefe;
+    
+}
+
+@media (max-width: 1187px){
+
+     .peli-item, .content-quiz{
+        width: 80%;
+     }
+     .content{
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+     }
+
+}
+
+/* ESTE ES LA SECCION DEL JUEGO QUIZ */
+
+.layout-quiz{
+
+    width: 100%;
+    height: auto;
+
+    display: grid;
+    grid-template-areas: 
+     "header header nav nav"
+     "content1 content1 content1 lateral"
+     "content1 content1 content1 lateral"
+     "footer footer footer footer"
+    ;
+
+    /*
+    ESTO FUNCIONA PARA PODER CONTROLAR EL HEIGHT DE LAS 4 COLUMNAS:    */
+    
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
+
+
+}
+
+/* .content-quiz{
+  grid-area: content1;
+    border: black solid 4px;
+    background-color: rgba(0, 0, 0, 0.298);
+    border-radius: 5px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 400px;
+    margin-top: 50px;
+    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-right: 100px;
+    padding-left: 100px;
+} */
+
+.content-quiz{
+  grid-area: content1;
+  text-align: center;
+  height: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  border-color: #5d4837;
+  border-style: solid;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 80px;
+  padding-top: 40px;
+  color: rgba(255, 255, 255, 0.854);
+  background-color: #000000c6;
+
+}
+
+.btn{
+
+    width: 415px;
+    height: 36px;
+    margin-top: 8px;
+    margin-right: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;  
+    border-color: rgba(24, 23, 23, 0.516);
+    color: #000000;
+    background-color: #dadadae0;
+    cursor: pointer;
+    padding-bottom: 29px;
+
+}
+
+.btn:hover{
+background-color: #ffffff6e;
+  color: #ffffffc4;
+  transition: 400ms;
+}
+
+
+
+.nextBtn:hover {
+     cursor: pointer;
+     color: #e6b84f;
+
+  }
+
+.answerBtn{
+    margin-top: 10px;
+}
+
+.questionQuizGame1{
+   
+   margin-top: 2px;
+   margin-left: 140px;
+   margin-right: 140px;
+   margin-bottom: 30px;
+   font-family: 'Open Sans', sans-serif;
+   font-weight: lighter;
+   font-size: 23px;
+   color: rgb(223, 220, 220);
+   border: 3px;
+   border-style: solid;
+   border-color: #9e5f5f9c;
+   border-radius: 4px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   background-color: #7b2e2ef1;
+
+}
+
+.gamepic{
+    height: 50px;
+    width: 50px;
+    margin: 15px;
+    transform: rotate(360deg);
+    border-radius: 5px;
+    opacity: 0.90;
+    
+}
+
+.lateral-quiz{
+    grid-area: lateral;
+    color: black;
+    background-color: #c22d2d00;
+    border-left: 2px solid  #100d0756;
+    
+    padding-top: 10px;
+
+}
+
+.quiz-creator-title1{
+    background-color: #ef6161;
+    border: 1px solid transparent ;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 50px;
+    color: #040303c9;
+
+}
+
+.quiz-creator-title{
+
+   color: rgba(255, 255, 255, 0.809);
+
+}
+
+.question-creator{
+    font-size: 25px;
+    font-weight: 300;
+    width: 85%;
+    height: 50px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.809);
+
+}
+
+.answer-creator{
+    width: 40%;
+    height: 30px;
+    margin: 5px;
+    font-size: 20px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.809);
+
+}
+
+.question-number{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.809);
+}
+
+.right-answer{
+    width: 305px;
+    height: 45px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.809);
+    color: rgb(0, 0, 0);
+}
+
+.right-question-selector{
+    margin-top: 20px;
+    border-top: 1px solid #f8f8f889;
+    
+}
+
+.right-question-selector 
+input[type="submit"]{
+    font-weight: 600;
+    padding-bottom: 11px;
+    padding-top: 10px;
+    width: 200px;
+    background-color: #ef6161;
+    color: #000000;
+    font-size: 20px;
+}
+
+.right-question-selector 
+input:hover[type="submit"]{
+    transition: 300ms;
+    background-color: #943636;
+    color: #000000;
+
+}
+
+.play-again-button{
+    margin-bottom: 100px;
+    width: 200px;
+}
+
+.play-again-button:hover{
+    background-color: #6f2525;
+}
+
+.total-score{
+
+    font-size: 20px;
+    
+}
+
+.first-and-second-question{
+
+    background-color: white;
+}
+
+.red{
+    background-color: red;
+}
+
+.green{
+    background-color: green;
+}
+
+.btn.correct {
+  background-color: #59d68f !important;
+  color: black;
+}
+
+.btn.incorrect {
+  background-color: #e56b6b !important;
+  color: black;
+
+}
+
+
+
+.next-button {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: bold;
+      width: 197px;
+      padding-right: 0px;
+      font-size: 23px;
+      color: #b2835d;
+      background-color: transparent;
+      margin-left: 690px;
+      border-style: none;
+      border-color: rgba(255, 255, 255, 0.865);
+
+  }
+
+  .quiz-progress{
+    margin-top: 30px;
+    margin-right: 10px;
+    font-size: 18px;
+    color: #fcefe4c8;
+    font-weight: 700;
+  }
+
+  .gameImage{
+    width: 55%;
+    height: 240px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+
+  .no-questions{
+    color: rgba(0, 0, 0, 0.785);
+    font-size: 28px;
+    justify-content: start;
+    display: flex;
+    align-items: start;
+  }

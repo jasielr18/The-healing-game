@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/The-healing-game/static/css/main.420f8d7a.css",
+    "main.js": "/The-healing-game/static/js/main.559d308f.js",
+    "static/media/medicina.jpeg": "/The-healing-game/static/media/medicina.0f7188bba25a0f122c82.jpeg",
+    "static/media/medicina7.jpg": "/The-healing-game/static/media/medicina7.32289f0011914cc85fc6.jpg",
+    "static/media/medicina4.jpg": "/The-healing-game/static/media/medicina4.ca34231fcd3e9f1ffac0.jpg",
+    "static/media/medicina6.jpg": "/The-healing-game/static/media/medicina6.90a90f9324f41ffb0da5.jpg",
+    "static/media/medicina5.jpg": "/The-healing-game/static/media/medicina5.3c7159be7b3bd74e316e.jpg",
+    "static/media/medicina3.webp": "/The-healing-game/static/media/medicina3.1e749f8ffb4f6ba8391b.webp",
+    "static/media/incorrectAnswer.mp3": "/The-healing-game/static/media/incorrectAnswer.2dbc2edf81a98c9dc3c6.mp3",
+    "static/media/medicina2.webp": "/The-healing-game/static/media/medicina2.f6f0df31016daf7708f4.webp",
+    "static/media/correctAnswer.mp3": "/The-healing-game/static/media/correctAnswer.aa93fb724687b4e414c2.mp3",
+    "index.html": "/The-healing-game/index.html",
+    "main.420f8d7a.css.map": "/The-healing-game/static/css/main.420f8d7a.css.map",
+    "main.559d308f.js.map": "/The-healing-game/static/js/main.559d308f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.420f8d7a.css",
+    "static/js/main.559d308f.js"
+  ]
+}
